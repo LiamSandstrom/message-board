@@ -1,5 +1,25 @@
 <html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
     <body>
         <%- include("navbar") %>
+
+        <div class="content-wrapper">
+            <form method="POST" action="/new" class="message-form">
+            <div class="input-wrapper">
+                <label for="name">Name</label>
+                <input name="name" type="text" id="name" maxlength="20" required />
+            </div>
+            <div class="input-wrapper">
+                <label for="message">Message</label>
+                <textarea name="messageText" type="text" id="message" maxlength="150" required></textarea>
+            </div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </body>
 </html>
