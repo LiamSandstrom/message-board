@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
 
 
-const home = (req: Request, res: Response) => {
-    res.send("Home")
+const index = (req: Request, res: Response) => {
+    res.render("index")
 }
 
 const newItem = (req: Request, res: Response) => {
-    res.send("new")
+    res.render("newItem")
 }
 
-export { home, newItem }
+export { index, newItem }
