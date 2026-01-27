@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+import { argv } from "node:process";
 import { Client } from "pg"
 
 const SQL = `
@@ -17,10 +18,12 @@ VALUES
   ('Good morning!', 'Larry');
 `;
 
+const db = argv[2];
+
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: "postgresql://liam:@localhost:5432/message_board",
+        connectionString: db,
     });
     await client.connect();
     await client.query(SQL);
