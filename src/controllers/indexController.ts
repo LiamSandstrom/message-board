@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
-import { addMessageAsync, getAllMessagesAsync } from "../repos/messageRepo.js"
 import { NewItemResponse } from "../models/newItemResponse.js";
 import { messageResponseToMessage } from "../helpers/messageResponseToMessage.js";
+import { addMessageAsync, getAllMessagesAsync } from "../db/queries.js";
 
 const index = async (req: Request, res: Response) => {
 
